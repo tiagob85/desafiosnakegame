@@ -21,14 +21,32 @@ body{
 .controles{
     display: flex;
     justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .labelcontrol{
     font-size: 15px;
+    margin-top: 2px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: black;
+    font-weight: bold;
 }
 
 #snake{
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider{
+    display: flex;
+    margin-top: 3px;
+}
+
+.seletor{
+    display: flex;
+    margin-left: 15px;
 }

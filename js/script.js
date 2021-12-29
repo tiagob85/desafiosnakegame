@@ -1,14 +1,15 @@
 let canvas = document.getElementById("snake");
 console.log("Canvas : "+ canvas);
 let context = canvas.getContext("2d");
-//let velocidade = 100;
 let velocidade = document.getElementById("speed");
 let fundo = document.getElementById("container");
+let modotheme = document.getElementById("modo");
+let titulojogo = document.getElementById("titulojogo");
+let labelvelocidade = document.getElementById("labelcontrol");
+let colorsnake = "green";
+let colorblock = "#0066ff";
+let drawFoodColor = "red";
 
-fundo.style.background = "#ffff66";
-//alert("Velocidade : "+speed1.value);
-/*console.log("Velocidade : "+ speed);*/
-//var velocidade = speed.value;
 let box = 32;
 let snake = [];
 snake[0] = {
@@ -24,20 +25,37 @@ let food = {
 
 /*desenha o quadro*/
 function criarBG() {
-    context.fillStyle = "#0066ff";//"lightgreen";
+    context.fillStyle = colorblock;
     context.fillRect(0, 0, 16 * box, 16 * box)
 }
 
 function criarCobrinha() {
     for (let i = 0; i < snake.length; i++) {
-        context.fillStyle = "green";
+        context.fillStyle = colorsnake;
         context.fillRect(snake[i].x, snake[i].y, box, box);        
     }
 }
 
 function drawFood() {
-    context.fillStyle = "red";
+    context.fillStyle = drawFoodColor;//"red";
     context.fillRect(food.x, food.y, box, box);
+}
+
+function setupGame(){
+    if (modotheme.value == '0') {
+        fundo.style.background = "#cccc00";
+        titulojogo.style.color = "black";
+        labelvelocidade.style.color = "black";
+        colorsnake = "green";
+    }else{
+        fundo.style.background = "#262626";
+        fundo.style.border = "1px solid white";
+        titulojogo.style.color = "white";
+        labelvelocidade.style.color = "white";
+        colorsnake = "#e6e6e6";
+        colorblock = "black";
+        drawFoodColor = "#4d4d4d";
+    }
 }
 
 document.addEventListener('keydown',update);
@@ -63,6 +81,7 @@ function iniciarJogo() {
         }
     }
 
+    setupGame();
     criarBG();
     criarCobrinha();
     drawFood();
