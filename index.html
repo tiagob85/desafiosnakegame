@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/styles.css">
+        <script defer src="/js/script.js"></script>
+        <title>Snake Game</title>
+    </head>
+    <body>
+        <div id="container">
+            <h1 class="titulo">SNAKE GAME !!</h1>
+            <canvas id="snake" width="512" height="512"></canvas>
+
+            <div class="controles">
+                <div class="slidecontainer">
+                    <div class="labelcontrol">Velocidade : </div> 
+                    <input type="range" min="50" max="400" value="120" id="speed">
+                </div>
+
+                <select name="modo" id="modo">
+                    <option value="normal">Normal</option>
+                    <option value="dark">Dark</option>
+                </select>
+            </div>
+            <script type="text/javascript">
+                document.getElementById('speed').onchange = function(){
+                    window.location.reload();
+                }
+            </script>        
+        </div>
+    </body>
+</html>
