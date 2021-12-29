@@ -1,3 +1,4 @@
+/*Variaveis*/
 let canvas = document.getElementById("snake");
 console.log("Canvas : "+ canvas);
 let context = canvas.getContext("2d");
@@ -80,7 +81,7 @@ function iniciarJogo() {
             window.location.reload();
         }
     }
-
+    //metodo de carregamento de configurações.
     setupGame();
     criarBG();
     criarCobrinha();
